@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"io"
 
+	"cosmossdk.io/core/address"
 	"cosmossdk.io/log"
 	confixcmd "cosmossdk.io/tools/confix/cmd"
 	dbm "github.com/cosmos/cosmos-db"
@@ -22,6 +23,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/crypto/keyring"
 	"github.com/cosmos/cosmos-sdk/server"
 	servertypes "github.com/cosmos/cosmos-sdk/server/types"
+	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
 	authcmd "github.com/cosmos/cosmos-sdk/x/auth/client/cli"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
