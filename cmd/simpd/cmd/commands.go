@@ -52,6 +52,11 @@ func initRootCmd(
 		queryCommand(),
 		txCommand(),
 		keys.Commands(),
+
+		ValidateGenesisCmd(basicManager),
+		AddGenesisAccountCmd(txConfig.SigningContext().AddressCodec()),
+		GenTxCmd(basicManager, txConfig, banktypes.GenesisBalancesIterator{}, defaultNodeHome, txConfig.SigningContext().ValidatorAddressCodec()),
+		CollectGenTxsCmd(banktypes.GenesisBalancesIterator{}, defaultNodeHome, gentxModule.GenTxValidator, txConfig.SigningContext().ValidatorAddressCodec()),
 	)
 }
 
