@@ -26,7 +26,7 @@ import (
 	genutilcli "github.com/cosmos/cosmos-sdk/x/genutil/client/cli"
 
 	typesgen "github.com/cosmos/cosmos-sdk/x/genutil/types"
-	
+
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 
@@ -49,6 +49,9 @@ func initRootCmd(
 	)
 
 	server.AddCommands(rootCmd, app.DefaultNodeHome, newApp, appExport, addModuleInitFlags)
+	var defaultNodeHome string
+	gentxModule := basicManager[typesgen.ModuleName].(genutil.AppModuleBasic)
+
 
 	// add keybase, auxiliary RPC, query, genesis, and tx child commands
 	rootCmd.AddCommand(
