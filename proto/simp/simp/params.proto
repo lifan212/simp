@@ -1,0 +1,15 @@
+syntax = "proto3";
+package simp.simp;
+
+import "amino/amino.proto";
+import "gogoproto/gogo.proto";
+
+option go_package = "simp/x/simp/types";
+
+// Params defines the parameters for the module.
+message Params {
+  option (amino.name) = "simp/x/simp/Params";
+  option (gogoproto.equal) = true;
+
+  
+}
